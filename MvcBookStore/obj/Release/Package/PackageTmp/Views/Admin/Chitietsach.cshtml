@@ -1,0 +1,126 @@
+﻿@model MvcBookStore.Models.SACH
+
+@{
+    ViewBag.Title = "Chitietsach";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<br />
+<br />
+<br />
+<br />
+<br />
+<h2>Chi tiết sách</h2>
+
+<div>
+    
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Tensach)*@
+            Tên sách:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tensach)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Donvitinh)*@
+            Đơn vị tính:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Donvitinh)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Dongia)*@
+            Đơn giá:
+        </dt>
+
+        <dd>
+            @*@Html.DisplayFor(model => model.Dongia)*@
+            @String.Format("{0:0,0}",Model.Dongia) VNĐ
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Mota)*@
+            Mô tả:
+        </dt>
+
+        <dd style="width:600px;text-align:justify">
+            @Html.DisplayFor(model => model.Mota)
+
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Hinhminhhoa)*@
+            Ảnh bìa:
+        </dt>
+
+        <dd>
+            @*@Html.DisplayFor(model => model.Hinhminhhoa)*@
+            <img src="@Url.Content("~/Hinhsanpham/"+Model.Hinhminhhoa)" width="120px" />
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.MaCD)*@
+            Chủ đề:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaCD)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.MaNXB)*@
+            Nhà xuất bản:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaNXB)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Ngaycapnhat)*@
+            Ngày cập nhật
+        </dt>
+
+        <dd>
+            @*@Html.DisplayFor(model => model.Ngaycapnhat)*@
+            @String.Format("{0:dd/MM/yyyy}",Model.Ngaycapnhat)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Soluongban)*@
+            Số lượng bán:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Soluongban)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.solanxem)*@
+            Số lần xem:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.solanxem)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.moi)*@
+            Mới
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.moi)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Điều chỉnh", "Suasach", new { id = Model.Masach }) |
+    @Html.ActionLink("Trở về", "Sach")
+</p>
